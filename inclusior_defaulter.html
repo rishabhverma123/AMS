@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<body>
+<!-- Modal -->
+  <div class="modal fade" id="modal1" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title" align="center">LogIn</h3>
+        </div>
+        <div class="modal-body" id="form">
+				<form action="faculty-registration-form.php" method='POST' class="form-horizontal">
+					<div class="form-group">
+						<label class="control-label col-sm-2" >ID&nbsp;<span id="remark">*</span></label>
+						<input type='text' name='id' class="form-control" required>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2" >NAME&nbsp;<span id="remark">*</span></label><input type='text' name='name' class="form-control" required>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2 ui-hidden-accessible">MOBILE&nbsp;<span id="remark">*</span></label>
+						<input type='text' pattern='[7 8 9][0-9]{9}' name='mobile' class="form-control" required placeholder='9990008990-----10 digits'>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2 ui-hidden-accessible">EMAIL&nbsp;<span id="remark">*</span></label>
+						<input type="email" name='email' class="form-control" required placeholder='aa@gmail.com'>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2 ui-hidden-accessible">PASSWORD&nbsp;<span id="remark">*</span></label>
+						<input type='password' name='password' class="form-control" required>
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label col-sm-2 ui-hidden-accessible">SUBJECT1&nbsp;<span id="remark">*</span></label> 
+						<input type='text' name='subject1' class="form-control" required>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2 ui-hidden-accessible">TYPE&nbsp;<span id="remark">*</span></label>	&nbsp &nbsp	
+						<select name="type1" class="form-control" required>
+							<option value="NULL"> NONE</option>
+							<option value="lec"> LECTURE</option>
+							<option value="tut"> TUT</option>
+							<option value="lab"> LAB</option>
+						</select>
+					</div>
+					
+					<div class="form-group"><label class="control-label col-sm-2" >SUBJECT2:</label> 
+						<input type='text' name='subject2' class="form-control">
+					</div>
+					<div class="form-group"><label class="control-label col-sm-2" >TYPE:</label>		
+					 <select class="form-control" name="type2">
+					  <option value="NULL"> NONE</option>
+					   <option value="lec"> LECTURE</option>
+					   <option value="tut"> TUT</option>
+					  <option value="lab"> LAB</option>
+					 </select>
+					</div>
+							
+					<div class="form-group"><label class="control-label col-sm-2" >SUBJECT3:</label>
+						<input type='text' name='subject3' class="form-control"> 
+					</div>
+					<div class="form-group"><label class="control-label col-sm-2" >TYPE:</label>	
+						<select class="form-control" name="type3">
+							<option value="NULL"> NONE</option>
+							<option value="lec"> LECTURE</option>
+							<option value="tut"> TUT</option>
+							<option value="lab"> LAB</option>
+						</select>
+					</div>
+
+					<div class="form-group"><label class="control-label col-sm-2" >SUBJECT4:</label> 
+					<input type='text' name='subject4' class="form-control">
+					</div>
+					<div class="form-group"><label class="control-label col-sm-2" >TYPE:</label>	
+						<select class="form-control" name="type4">
+						<option value="NULL"> NONE</option>
+						<option value="lec"> LECTURE</option>
+						<option value="tut"> TUT</option>
+						<option value="lab"> LAB</option>
+						</select>
+					</div>
+					
+					<div class="form-group"><label class="control-label col-sm-2" >SUBJECT5:</label> 
+					<input type='text' name='subject5' class="form-control">
+					</div>
+					<div class="form-group"><label class="control-label col-sm-2" >TYPE:</label>	
+						<select class="form-control" name="type5">
+						<option value="NULL"> NONE</option>
+						<option value="lec"> LECTURE</option>
+						<option value="tut"> TUT</option>
+						<option value="lab"> LAB</option>
+						</select>
+					</div>
+					
+					<div class="form-group"><label class="control-label col-sm-2" >SUBJECT6:</label>
+					 <input type='text' name='subject6' class="form-control">
+					 </div>
+					<div class="form-group"><label class="control-label col-sm-2" >TYPE:</label>	
+						<select class="form-control" name="type6">
+						<option value="NULL"> NONE</option>
+						<option value="lec"> LECTURE</option>
+						<option value="tut"> TUT</option>
+						<option value="lab"> LAB</option>
+						</select>
+					</div>
+					
+					<div class="form-group"><label class="control-label col-sm-2" >SUBJECT7:</label>
+					 <input type='text' name='subject7' class="form-control">
+					</div>
+					<div class="form-group"><label class="control-label col-sm-2" >TYPE:</label>	
+						<select class="form-control" name="type7">
+							<option value="NULL"> NONE</option>
+							<option value="lec"> LECTURE</option>
+							<option value="tut"> TUT</option>
+							<option value="lab"> LAB</option>
+						</select>
+					</div>
+					
+					<div class="form-group"><label class="control-label col-sm-2" >SUBJECT8:</label>
+					 <input type='text' name='subject8' class="form-control">
+					</div>
+					<div class="form-group"><label class="control-label col-sm-2" >TYPE:</label>	
+						<select class="form-control" name="type8">
+							<option value="NULL"> NONE</option>
+							<option value="lec"> LECTURE</option>
+							<option value="tut"> TUT</option>
+							<option value="lab"> LAB</option>
+						</select>
+					</div><br/><br/>
+									
+					<button class="btn btn-default" type="submit" name ='submit-faculty-registration' value ="submit">Submit</button>
+						
+											
+				</form><br/>	
+		</div>
+		
+        <div class="modal-footer">
+		  <h5 id="remark" align="center">*Fields are necessary</h5>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div> 
+    </div>
+  </div>
+
+</body>
+</html>
