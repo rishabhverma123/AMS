@@ -1,8 +1,8 @@
 <?php
  session_start();
   ob_start();
-   require 'connection.php';
-    require 'auth_check.php';
+   require '../included/connection.php';
+    require '../included/auth_check.php';
     global $connection;
    $query="SELECT `startsem` FROM `start-sem` WHERE `id`=1";
   $query_run=mysqli_query($connection, $query);
@@ -12,12 +12,12 @@
 <html>
 	<head>
 		<title>Student Details</title>
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
 		<style>
 			#result{
-				background-image:url(images/15a.jpg);
+				background-image:url(../images/15a.jpg);
 				overflow:auto;
 				height:230%;
 			}
@@ -124,7 +124,7 @@
 	<body>
 		<div>
 
-			<?php include_once("bundelkhand_header.html");?>
+			<?php include_once("../included/bundelkhand_header.html");?>
 			<nav class="navbar navbar-inverse" style="margin-bottom:0px;padding-left:0px;padding-top:0px;">
 				<div class="container-fluid">
 					<div class="navbar-header">
@@ -134,7 +134,7 @@
 						<li class="active"><a href="hod_after_login.php">Home</a></li>
 					</ul>
 
-						<a href="logout.php">
+						<a href="../included/logout.php">
 							<button	class="btn btn-danger navbar-btn navbar-right"	data-toggle="modal"	data-target="#">Logout &nbsp;</button>
 						</a>
 
@@ -170,7 +170,7 @@
 						<li><a href="student_reg.php">Student Registration</a></li>
 						<li><a href="view_att.php">View Attendance</a></li>
 						<li><a href="#">Defaulters</a></li>
-						<li><a href="medical_leave_hod.php">Medical leave</a></li>
+						<!--<li><a href="medical_leave_hod.php">Medical leave</a></li>-->
 						<li><a href="upload_notice_hod.php">Upload notice</a></li>
 					  </ul>
 					  </nav>
@@ -178,10 +178,7 @@
 				<div class="col-sm-9 col-lg-10" style="height:230%;overflow:auto;" id="result">
 					<h2 align="center">Student Details</h2>
 					<?php
-					
-						
-							
-						require_once "connection.php";
+						require_once "../included/connection.php";
 						
 						if(isset($_POST['submit']) && isset($_POST['hod-choose-semester']))
 						{	

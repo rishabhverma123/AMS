@@ -9,7 +9,7 @@
 
 <?php
 	session_start();
-	require "connection.php";
+	require "../included/connection.php"; 
 	 $username=$_SESSION['username'];
 	 $semester=$_SESSION['semester'];
 	 $date=$_SESSION['date'];

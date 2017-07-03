@@ -1,15 +1,15 @@
 <?php
-  require "connection.php";
+  require "../included/connection.php";
    session_start();
-   require 'auth_check.php';
+   require '../included/auth_check.php';
   $username=$_SESSION['username'];
 ?>
 <html>
   <head>
 	<title>Faculty Login</title>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
 		<style>
 		  .sidebar-nav {
 			  
@@ -114,7 +114,7 @@
   </head>
 <body>
 
-<?php include_once("bundelkhand_header.html");?>
+<?php include_once("../included/bundelkhand_header.html");?>
 
 <nav class="navbar navbar-inverse" style="margin-bottom:0px;padding-left:0px;padding-top:0px;">
 	<div class="container-fluid">
@@ -125,7 +125,7 @@
 		<li class="active"><a href="faculty_after_login.php">Home</a></li>
 		</ul>
 			
-			<a	href="logout.php">
+			<a	href="../included/logout.php">
 			  <button class="btn btn-danger navbar-btn navbar-right" data-toggle="modal" data-target="#">Logout &nbsp;</button>
 			</a>
 	</div>
@@ -147,7 +147,7 @@
 				  </nav>
 			</div>
 			<div class="col-sm-9 col-lg-10" id="back">
-				<img src="images/8a.jpg"  height="250%" width="100%"/>
+				<img src="../images/8a.jpg"  height="250%" width="100%"/>
 			  <p style="position:absolute;top:10%;left:20%;color:black;font-size:40px;opacity:1.0;">
 					Welcome<br/><br/></p>
 			  <p style="position:absolute;top:30%;left:20%;margin-right:15%;color:black;font-size:25px;opacity:1.0;font-family:goudy old style">

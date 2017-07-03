@@ -1,8 +1,8 @@
 <?php
 session_start();
  ob_start();
-  require 'connection.php';
-   require 'auth_check.php';
+  require '../included/connection.php';
+   require '../included/auth_check.php';
     global $connection;
    $query="SELECT `startsem` FROM `start-sem` WHERE `id`=1";
   $query_run=mysqli_query($connection, $query);
@@ -12,12 +12,12 @@ session_start();
 <html>
 <head>
 	<title>Defauters</title>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
 	<style>
 		#result{
-			background-image:url(images/17a.jpg);
+			background-image:url(../images/17a.jpg);
 			overflow:auto;
 			height:230%;
 		}
@@ -126,7 +126,7 @@ session_start();
   </head>
 <body>
 	<div>
-		<?php include_once("bundelkhand_header.html");?>
+		<?php include_once("../included/bundelkhand_header.html");?>
 
 		<nav class="navbar navbar-inverse" style="margin-bottom:0px;padding-left:0px;padding-top:0px;">
 			<div class="container-fluid">
@@ -175,7 +175,7 @@ session_start();
 					<li><a href="student_reg.php">Student Registration</a></li>
 					<li><a href="view_att.php">View Attendance</a></li>
 					<li><a href="defaulters.php">Defaulters</a></li>
-					<li><a href="medical_leave_hod.php">Medical leave</a></li>
+					<!--<li><a href="medical_leave_hod.php">Medical leave</a></li>-->
 					<li><a href="upload_notice_hod.php">Upload notice</a></li>
 				  </ul>
 				</nav>
@@ -188,7 +188,7 @@ session_start();
 
 				<?php
 					
-				require_once "connection.php";
+				require_once "../included/connection.php";
 				
 				if(isset($_POST['submit']) && isset($_POST['hod-choose-semester']))
 				{	
@@ -229,10 +229,7 @@ session_start();
 									$row++;
 								}
 								echo "</table>";
-								
-						
 					}
-				
 				?>
 			</div>
 		</div>

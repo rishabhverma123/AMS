@@ -1,5 +1,5 @@
 <?php
-	require "connection.php";
+	require "../included/connection.php";
 	session_start();
 
 	$current_semester=$_SESSION['registration_semester'];
@@ -83,14 +83,14 @@
 <html>
 	<head>
 		<title>Student Registration</title>
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
 		<style>
 			#result{
 			overflow:auto;
 			height:230%;
-			background-image:url(images/pencil3.jpg);
+			background-image:url(../images/pencil3.jpg);
 			}
 			.sidebar-nav {
 
@@ -227,7 +227,7 @@
 	<body>
 		<div>
 
-			<?php include_once("bundelkhand_header.html");?>
+			<?php include_once("../included/bundelkhand_header.html");?>
 			
 			<nav class="navbar navbar-inverse" style="margin-bottom:0px;padding-left:0px;padding-top:0px;">
 			<div class="container-fluid">
@@ -269,6 +269,8 @@
 						<li><a href="student_reg.php">Student Registration</a></li>
 						<li><a href="view_att.php">View Attendance</a></li>
 						<li><a href="defaulters.php">Defaulters</a></li>
+						<!--<li><a href="medical_leave_hod.php">Medical leave</a></li>-->
+						<li><a href="upload_notice_hod.php">Upload notice</a></li>
 					  </ul>
 					</nav>
 				</div>

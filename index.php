@@ -1,5 +1,6 @@
+
 <?php
-	require_once "connection.php";
+	require_once "/included/connection.php";
 	session_start();
 	$_SESSION['is_loggedin']=false;
 	if( isset($_POST['username']) && isset($_POST['password']))
@@ -26,7 +27,7 @@
 					$_SESSION['key']=$login_type;
 					$_SESSION['is_loggedin']=true;
 					$_SESSION['auth_number']=1;
-					header('Location:hod_after_login.php');
+					header('Location:Hod/hod_after_login.php');
 				}
 				else
 				{
@@ -48,7 +49,7 @@
 					$_SESSION['username']=$login_username;
 					$_SESSION['auth_number']=2;
 					$_SESSION['is_loggedin']=true;
-					header('Location:faculty_after_login.php');
+					header('Location:Faculty/faculty_after_login.php');
 				}
 				else
 				{
@@ -73,7 +74,7 @@
 						$_SESSION['rollnumber']=$login_username;
 						$_SESSION['auth_number']=3;
 						$_SESSION['is_loggedin']=true;
-						header('Location:student_after_login.php');
+						header('Location:/student/student_after_login.php');
 					}
 					else 
 						echo  "<script> alert('no fetch assoc'); </script>";	
@@ -100,6 +101,9 @@
     }
 	
 ?>
+
+
+
 <html>
     <head>
 		<title>AMS Login</title>
@@ -141,7 +145,7 @@
 		</style>
     </head>
 	<body>
-
+	
 	<?php include_once("bundelkhand_header.html"); ?>
 
 	<nav class="navbar navbar-inverse" style="margin-bottom:0px;padding-left:0px;padding-top:0px;">
@@ -236,7 +240,7 @@
 			  <h3 class="modal-title" align="center">LogIn</h3>
 			</div>
 			<div class="modal-body" id="form">
-			  <form class="form-horizontal" method="POST" action="<?php echo $_SERVER['PHP_SELF']?>">
+			  <form class="form-horizontal" method="POST" action="index.php">
 			 <div class="form-group"><label>Enter ID<span id="remark">&nbsp;*</span></label>&nbsp;&nbsp;&nbsp;
 			 <input type="text" placeholder="enter your id" name="username" class="form-control" required /></div>              
 			  <br/><br/><div class="form-group"><label>Enter Password<span id="remark">&nbsp;*</span></label>&nbsp;
@@ -245,10 +249,10 @@
 			<label>Select View<span id="remark">&nbsp;*</span></label>&nbsp;&nbsp;
 
 			<select name="login_type" class="form-control" required>
-								<option value="hod-detail"> 	HOD		</option>
-								<option value="faculty-detail"> FACULTY </option>
-								<option value="student-detail"> STUDENT </option>
-							</select></div><br/><br/>
+				<option value="hod-detail"> 	HOD		</option>
+				<option value="faculty-detail"> FACULTY </option>
+				<option value="student-detail"> STUDENT </option>
+			</select></div><br/><br/>
 			   <button type="submit" name ="submit_button" value ="submit" id="button" class="btn btn-default">Submit</button>
 			  </form>
 			</div>
@@ -260,3 +264,4 @@
 	  </div>
 	</body>
 </html>
+

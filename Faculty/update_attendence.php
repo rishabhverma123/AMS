@@ -4,7 +4,7 @@
 <br/>
 <br/>
 <?php
-  require "connection.php"; 
+  require "../included/connection.php"; 
    session_start();
    $username=$_SESSION['username'];
   $semester=$_SESSION['semester'];

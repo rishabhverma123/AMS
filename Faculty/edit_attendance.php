@@ -1,8 +1,8 @@
 <?php
-  require "connection.php";
+  require "../included/connection.php"; 
    ob_start();
     session_start();
-     require 'auth_check.php';
+     require '../included/auth_check.php';
     $username=$_SESSION['username'];
    date_default_timezone_set('Indian/Chagos'); // CDT
   $current_date = date('r');
@@ -11,14 +11,14 @@
 <html>
 <head>
 	<title>Edit Attendence</title>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
 		<style>
 			#result{
 				overflow:auto;
 				height:250%;
-				background-image:url(images/1237.jpg)
+				background-image:url(../images/1237.jpg)
 			}
 		  .sidebar-nav {
 			  
@@ -138,7 +138,7 @@
 <body>
 
 	<div>
-<?php include_once("bundelkhand_header.html");?>
+<?php include_once("../included/bundelkhand_header.html");?>
 
 <nav class="navbar navbar-inverse" style="margin-bottom:0px;padding-left:0px;padding-top:0px;">
 	<div class="container-fluid">
@@ -149,7 +149,7 @@
 			<li class="active"><a href="faculty_after_login.php">Home</a></li>
 		</ul>
 			<a
-				href="logout.php">
+				href="../included/logout.php">
 				<button
 					class="btn btn-danger navbar-btn navbar-right"
 					data-toggle="modal"
@@ -202,34 +202,32 @@
 							if(isset($_POST['submit_sem']))
 							{
 								global $username;
-							global $connection;
-							$semester=$_POST['faculty-choose-semester'];
-
-							$_SESSION['semester']=$semester;
-							
-							$query="SELECT * FROM `faculty-detail` WHERE `id`='".$_SESSION['username']."'";
-							
-							$run=mysqli_query($connection, $query);
-							$row=mysqli_fetch_assoc($run);
-							
-							for($i=1;$i<9;$i++)
-							{
-								if($row['subject'.$i]=="")
-									break;
-												
-								if($row['subject'.$i]!=" " || $row['subject'.$i]!="" )
+								global $connection;
+								$semester=$_POST['faculty-choose-semester'];
+								$_SESSION['semester']=$semester;
+								
+								$query="SELECT * FROM `faculty-detail` WHERE `id`='".$_SESSION['username']."'";
+								$run=mysqli_query($connection, $query);
+								$row=mysqli_fetch_assoc($run);
+								
+								for($i=1;$i<9;$i++)
 								{
-									$query_subject_sem_table="SELECT `id` FROM `subject_sem` WHERE `subject`='".$row['subject'.$i]."' AND `sem`='".$semester."'";
-									$row_subject_sem=mysqli_query($connection,$query_subject_sem_table);
-									$fetch_assoc=mysqli_fetch_assoc($row_subject_sem);
-									if($fetch_assoc['id']>=1)
+									if($row['subject'.$i]=="")
+										break;
+													
+									if($row['subject'.$i]!=" " || $row['subject'.$i]!="" )
 									{
-										echo "<option value='".$row['subject'.$i]."'>".$row['subject'.$i].  "</option>";
+										$query_subject_sem_table="SELECT `id` FROM `subject_sem` WHERE `subject`='".$row['subject'.$i]."' AND `sem`='".$semester."'";
+										$row_subject_sem=mysqli_query($connection,$query_subject_sem_table);
+										$fetch_assoc=mysqli_fetch_assoc($row_subject_sem);
+										if($fetch_assoc['id']>=1)
+										{
+											echo "<option value='".$row['subject'.$i]."'>".$row['subject'.$i].  "</option>";
+										}
+										
 									}
-									
 								}
 							}
-						}
 
 						?>
 					</select>

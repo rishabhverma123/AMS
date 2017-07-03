@@ -271,7 +271,7 @@ $current_semester=$_SESSION['registration_semester'];
 					<li><a href="student_reg.php">Student Registration</a></li>
 					<li><a href="view_att.php">View Attendance</a></li>
 					<li><a href="defaulters.php">Defaulters</a></li>
-					<li><a href="medical_leave_hod.php">Medical leave</a></li>
+					<!--<li><a href="medical_leave_hod.php">Medical leave</a></li>-->
 					<li><a href="upload_notice_hod.php">Upload notice</a></li>
 				  </ul>
 			 </nav>

@@ -1,8 +1,8 @@
 <?php
  session_start();
   ob_start();
-   require 'connection.php';
-    require 'auth_check.php';
+   require "../included/connection.php"; 
+    require '../included/auth_check.php';
     global $connection;
    $query="SELECT `startsem` FROM `start-sem` WHERE `id`=1";
   $query_run=mysqli_query($connection, $query);
@@ -12,12 +12,12 @@
 <html>
 	<head>
 		<title>Defaulters</title>
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
 		<style>
 			#result{
-			background-image:url(images/17a.jpg);
+			background-image:url(../images/17a.jpg);
 			overflow:auto;
 			height:230%;
 			}
@@ -127,7 +127,7 @@
 <body>
 	<div>
 
-	<?php include_once("bundelkhand_header.html");?>
+	<?php include_once("../included/bundelkhand_header.html");?>
 
 	<nav class="navbar navbar-inverse" style="margin-bottom:0px;padding-left:0px;padding-top:0px;">
 		<div class="container-fluid">
@@ -137,7 +137,7 @@
 			<ul class="nav navbar-nav navbar-right">
 			<li class="active"><a href="faculty_after_login.php">Home</a></li>
 			</ul>
-				<a href="logout.php">
+				<a href="../included/logout.php">
 					<button class="btn btn-danger navbar-btn navbar-right" data-toggle="modal"	data-target="#">Logout &nbsp;</button>
 				</a>
 			<form id ="create" class="navbar-form navbar-left" action="<?php echo $_SERVER['PHP_SELF']?>" method ="POST" onsubmit="return parent.scrollTo(0,1500); return true" >
@@ -179,7 +179,7 @@
 				<h3 align="center" style="color:#96858f;margin-top:3%;">To view defaulters select semester</h3>
 				
 				<?php
-				require_once "connection.php";
+				require_once "../included/connection.php";
 				
 				if(isset($_POST['submit']) && isset($_POST['faculty-choose-semester']))
 				{	

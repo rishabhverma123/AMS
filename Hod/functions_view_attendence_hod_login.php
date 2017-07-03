@@ -1,5 +1,5 @@
 <?php
-	include "connection.php";
+	include "../included/connection.php";
 	global $connection;
 
 		function view_attendence_semester_1()

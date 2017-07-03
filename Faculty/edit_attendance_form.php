@@ -1,8 +1,8 @@
 <?php
  session_start();
   ob_start();
-   require "connection.php";
-    require 'auth_check.php';
+   require "../included/connection.php"; 
+    require '../included/auth_check.php';
      $username=$_SESSION['username'];
      $semester=$_SESSION['semester'];
     $date=$_SESSION['date'];
@@ -15,9 +15,9 @@
 <html>
 <head>
 	<title>Edit Attendence</title>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
 	<style>
 		  .carousel-inner > .item > img,
 		  .carousel-inner > .item > a > img {
@@ -48,7 +48,7 @@
 			  
 		  }
 		  #main{
-			  background-image:url(images/newb2.jpg);
+			  background-image:url(../images/newb2.jpg);
 			  height:180%;
 			  width:100%;
 		  }
@@ -103,7 +103,7 @@
 </head>
 <body>
 
-<?php include_once("bundelkhand_header.html"); ?>
+<?php include_once("../included/bundelkhand_header.html"); ?>
 
 <nav class="navbar navbar-inverse" style="margin-bottom:0px;padding-left:0px;padding-top:0px;">
 	<div class="container-fluid">
@@ -113,7 +113,7 @@
 		<ul class="nav navbar-nav navbar-right">
 		<li class="active"><a href="faculty_after_login.php">Home</a></li>
 		</ul>
-			<a href="logout.php">
+			<a href="../included/logout.php">
 				<button	class="btn btn-danger navbar-btn navbar-right"	data-toggle="modal" data-target="#">Logout &nbsp;</button>
 			</a>
 	</div>

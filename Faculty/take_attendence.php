@@ -1,23 +1,23 @@
 <?php
-	require "connection.php";
+	require "../included/connection.php"; 
 	 ob_start();
 	  session_start();
 	   $username=$_SESSION['username'];
-	   require 'auth_check.php';
+	   require '../included/auth_check.php';
 	  date_default_timezone_set('Indian/Chagos'); // CDT
 	$current_date = date('r');
 ?>
 <html>
 	<head>
 		<title>Take Attendence</title>
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
 		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		   <script src="js/bootstrap.min.js"></script>
+		   <script src="../js/bootstrap.min.js"></script>
 			<style>
 				#result{
 					overflow:auto;
 					height:250%;
-					background-image:url(images/1237.jpg)
+					background-image:url(../images/1237.jpg)
 				}
 			  .sidebar-nav {
 				  
@@ -136,7 +136,7 @@
 	  </head>
 	<body>
 		<div>
-			<?php include_once("bundelkhand_header.html");?>
+			<?php include_once("../included/bundelkhand_header.html");?>
 
 			<nav class="navbar navbar-inverse" style="margin-bottom:0px;padding-left:0px;padding-top:0px;">
 			<div class="container-fluid">
@@ -148,7 +148,7 @@
 			</ul>
 
 				<a
-					href="logout.php">
+					href="../included/logout.php">
 					<button
 						class="btn btn-danger navbar-btn navbar-right"
 						data-toggle="modal"
@@ -296,23 +296,24 @@
 									 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 									 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
 									 <script type="text/javascript">
-									 $( function() {
-										$("#success_text").show();
-										$( "#dialog-message" ).dialog({
-											resizable: false,
-											height: "auto",
-											width: 400,
-											modal: true,
-											buttons: {
-												"Take me there": function() {
-													window.location="update_attendence.php";
-												},
-												Cancel: function() {
-													$( this ).dialog( "close" );
+									 $( function() 
+										 {
+											$("#success_text").show();
+											$( "#dialog-message").dialog({
+												resizable: false,
+												height: "auto",
+												width: 400,
+												modal: true,
+												buttons: {
+													"Take me there": function() {
+														window.location="update_attendence.php";
+													},
+													Cancel: function() {
+														$( this ).dialog( "close" );
+													}
 												}
-											}
+											});
 										});
-									});
 									</script> 
 									<?php
 

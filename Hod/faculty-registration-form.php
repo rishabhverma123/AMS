@@ -1,6 +1,6 @@
 
 <?php
-	require "connection.php";
+	require "../included/connection.php";
 	if(isset($_POST['submit-faculty-registration']))
 	{
 		$id=test_input($_POST['id']);

@@ -10,9 +10,9 @@
 */
 -->
 <?php
-	require_once "connection.php";
+	require_once "../included/connection.php";
 	session_start();
-	require 'auth_check.php';
+	require '../included/auth_check.php';
 	$auth_number=$_SESSION['auth_number'];
 	//print_r($_SESSION);
 	
@@ -21,14 +21,14 @@
 <html>
 	<head>
 		<title>UPLOAD</title>
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
 				<style>
 					#result{
 						overflow:auto;
 						height:230%;
-						background-image:url(images/pencil3.jpg);
+						background-image:url(../images/pencil3.jpg);
 					}
 				  .sidebar-nav {
 					  
@@ -199,7 +199,7 @@
 	  </head>
 	<body>
 		<div>
-		<?php include_once("bundelkhand_header.html");?>
+		<?php include_once("../included/bundelkhand_header.html");?>
 
 		<nav class="navbar navbar-inverse" style="margin-bottom:0px;padding-left:0px;padding-top:0px;">
 			<div class="container-fluid">
@@ -210,7 +210,7 @@
 					<li class="active"><a href="hod_after_login.php">Home</a></li>
 				</ul>
 					<a
-						href="logout.php">
+						href="../included/logout.php">
 						<button
 							class="btn btn-danger navbar-btn navbar-right"
 							data-toggle="modal"

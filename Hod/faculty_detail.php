@@ -1,9 +1,9 @@
 <html>
 <head>
 	<title>Faculty Detail!</title>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
 		<style>
 		  #result{
 				overflow:auto;
@@ -103,7 +103,7 @@
 <body>
 <div>
 
-<?php  include_once("bundelkhand_header.html");?>
+<?php  include_once("../included/bundelkhand_header.html");?>
 
 <nav class="navbar navbar-inverse" style="margin-bottom:0px;padding-left:0px;padding-top:0px;">
 	<div class="container-fluid">
@@ -113,7 +113,7 @@
 		<ul class="nav navbar-nav navbar-right">
 		<li class="active"><a href="hod_after_login.php">Home</a></li>
 		</ul>
-			<a href="logout.php">
+			<a href="../included/logout.php">
 			  <button	class="btn btn-danger navbar-btn navbar-right" data-toggle="modal"	data-target="#">Logout &nbsp;</button>
 			</a>
 
@@ -122,8 +122,7 @@
 <div class="container-fluid">
   <div class="row" style="height:30%;">
     <div class="col-sm-3 col-lg-2"  style="background-color:#f0ebeb;">
-		  <nav class="navbar navbar-nav navbar-default navbar-fixed-side navbar-light" 
-		  style="background-color:#f0ebeb;height:250%;width:100%;margin-left:0px;">
+		  <nav class="navbar navbar-nav navbar-default navbar-fixed-side navbar-light" style="background-color:#f0ebeb;height:250%;width:100%;margin-left:0px;">
 			  <ul class="nav navbar-nav">
 				<li><a href="faculty_detail.php">Faculty Details</a></li>
 				<li><button class="btn navbar-btn btn-link" data-toggle="modal" data-target="#modal1" style="text-decoration:none;font-size:16px;">Faculty Registration</button></li>
@@ -131,18 +130,18 @@
 				<li><a href="student_reg.php">Student Registration</a></li>
 				<li><a href="view_att.php">View Attendance</a></li>
 				<li><a href="defaulters.php">Defaulters</a></li>
-				<li><a href="medical_leave_hod.php">Medical leave</a></li>
+				<!--<li><a href="medical_leave_hod.php">Medical leave</a></li>-->
 				<li><a href="upload_notice_hod.php">Upload notice</a></li>
 			  </ul>
 			</nav>
 	</div>
-	<div class="col-sm-9 col-lg-10" style="height:250%;overflow:auto;background-image:url(images/1237.jpg);opacity:0.8;" id="result">
+	<div class="col-sm-9 col-lg-10" style="height:250%;overflow:auto;background-image:url(../images/1237.jpg);opacity:0.8;" id="result">
 		<h2 align="center" style="color:black;">Faculty Details</h2>
 		<hr/>
 		<?php
-			require "connection.php";
+			require "../included/connection.php";
 			session_start();
-			require 'auth_check.php';
+			require '../included/auth_check.php';
 			global $connection;
 			echo "<br/>";
 			echo "<table  border:collapse  class='table table-hover'>";
